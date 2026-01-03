@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Icon from '@/components/ui/icon';
 import { InsulinCalculator } from '@/components/InsulinCalculator';
 import { HomaCalculator } from '@/components/HomaCalculator';
+import { ThyrotoxicosisNavigator } from '@/components/ThyrotoxicosisNavigator';
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -264,9 +265,10 @@ const Index = () => {
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold mb-2">Медицинские калькуляторы</h3>
                 <p className="text-muted-foreground">
-                  Инструменты для быстрого расчета клинических показателей
+                  Инструменты для быстрого расчета клинических показателей и диагностики
                 </p>
               </div>
+              <ThyrotoxicosisNavigator />
               <InsulinCalculator />
               <HomaCalculator />
             </div>
