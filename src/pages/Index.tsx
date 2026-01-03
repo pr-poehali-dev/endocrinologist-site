@@ -6,6 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Icon from '@/components/ui/icon';
+import { InsulinCalculator } from '@/components/InsulinCalculator';
+import { HomaCalculator } from '@/components/HomaCalculator';
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -191,10 +193,14 @@ const Index = () => {
         </section>
 
         <Tabs defaultValue="cheatsheets" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8 h-12 rounded-2xl">
+          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-4 mb-8 h-12 rounded-2xl">
             <TabsTrigger value="cheatsheets" className="rounded-xl">
               <Icon name="FileText" size={18} className="mr-2" />
               Шпаргалки
+            </TabsTrigger>
+            <TabsTrigger value="calculators" className="rounded-xl">
+              <Icon name="Calculator" size={18} className="mr-2" />
+              Калькуляторы
             </TabsTrigger>
             <TabsTrigger value="specialists" className="rounded-xl">
               <Icon name="Users" size={18} className="mr-2" />
@@ -251,6 +257,19 @@ const Index = () => {
                 </p>
               </div>
             )}
+          </TabsContent>
+
+          <TabsContent value="calculators" className="animate-fade-in">
+            <div className="max-w-4xl mx-auto space-y-8">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold mb-2">Медицинские калькуляторы</h3>
+                <p className="text-muted-foreground">
+                  Инструменты для быстрого расчета клинических показателей
+                </p>
+              </div>
+              <InsulinCalculator />
+              <HomaCalculator />
+            </div>
           </TabsContent>
 
           <TabsContent value="specialists" className="animate-fade-in">
